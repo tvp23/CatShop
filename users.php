@@ -24,7 +24,8 @@
     <?php session_start(); ?>
     <?php include 'components/c_nav.php'; ?>
     <?php include './services/s_db.php' ?>
-    <?php checkRole('superadmin'); ?>
+    <?php include 'services/s_rolecheck.php';
+    checkRole('superadmin'); ?>
     <?php
     if (isset($_POST['changeRole'])) {
         updateRole($_POST['changeRole'], $_POST['role']);
