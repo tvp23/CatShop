@@ -1,5 +1,5 @@
 <?php
-$currentPage = str_replace(["/safe_programing/", ".php"], "", "$_SERVER[REQUEST_URI]");
+$currentPage = str_replace(["/catshop/", ".php"], "", "$_SERVER[REQUEST_URI]");
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
