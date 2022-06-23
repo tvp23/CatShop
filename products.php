@@ -31,6 +31,9 @@
                         <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
                     </div>
                 </div>
+                <?php if (!empty($_POST['product'])) { ?>
+                    <p><span style="color: gray;">Results for: <?php echo htmlentities($_POST['product']) ?></span></p>
+                <?php } ?>
             </form>
         </div>
         <div class="d-flex flex-row bd-highlight mb-3 flex-wrap">
