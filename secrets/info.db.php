@@ -2,4 +2,4 @@
 $servername = "localhost";
 $dbname = "catshop";
 $username = "root";
-$password = "";
+$password = "Welkom01!";

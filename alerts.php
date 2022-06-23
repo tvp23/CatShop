@@ -21,9 +21,9 @@
 
 
     <?php session_start(); ?>
-    <?php include 'services/s_rolecheck.php';
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/services/s_rolecheck.php';
     checkRole('superadmin'); ?>
-    <?php include './services/s_db.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/services/s_db.php' ?>
     <?php
     if (isset($_POST['activateAlert'])) {
         updateActiveAlert($_POST['activateAlert']);
@@ -41,7 +41,7 @@
         updateDisableAlerts();
     }
     ?>
-    <?php include 'components/c_nav.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_nav.php' ?>
     <div class="container" style="padding-top: 8em">
         <div class="card" style="margin-top: 2em;">
             <div class="card-body">

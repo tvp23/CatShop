@@ -2,13 +2,13 @@
 
 function connect()
 {
-    $path = $_SERVER['DOCUMENT_ROOT'] . "/safe_programing/secrets/info.db.php";
-    require $path;
+    include $_SERVER['DOCUMENT_ROOT'] . '/secrets/info.db.php';
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     } catch (PDOException $e) {
+        echo $e->getMessage();
         return $e->getMessage();
     }
 }

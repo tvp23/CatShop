@@ -41,7 +41,7 @@
     ?>
 
     <div style="margin-top: 10%;" class="d-flex justify-content-center align-items-center">
-        <?php include 'components/c_register.php' ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_register.php' ?>
     </div>
 
 </body>

@@ -19,9 +19,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <?php session_start() ?>
-    <?php include 'components/c_nav.php' ?>
-    <?php include './services/s_db.php' ?>
-    <?php include 'components/c_alert_banner.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_nav.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/services/s_db.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_alert_banner.php'; ?>
     <div class="container d-flex justify-content-center flex-column" style="margin-top: 5em; width: 62em;">
         <div class="d-flex justify-content-center" style="margin-bottom: 2em;">
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">

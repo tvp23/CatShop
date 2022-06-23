@@ -22,9 +22,9 @@
 
 
     <?php session_start(); ?>
-    <?php include 'components/c_nav.php'; ?>
-    <?php include './services/s_db.php' ?>
-    <?php include 'services/s_rolecheck.php';
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_nav.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/services/s_db.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/services/s_rolecheck.php';
     checkRole('superadmin'); ?>
     <?php
     if (isset($_POST['changeRole'])) {

@@ -1,5 +1,5 @@
 <?php
-include './s_db.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/services/s_db.php';
 session_start();
 
 $name = $_POST["name"];

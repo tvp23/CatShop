@@ -1,4 +1,4 @@
-<form action="services/s_register.php" method="post">
+<form action="/services/s_register.php" method="post">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

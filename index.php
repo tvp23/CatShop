@@ -22,10 +22,13 @@
 
 
     <?php session_start(); ?>
-    <?php include 'components/c_nav.php'; ?>
-    <?php include './services/s_db.php' ?>
-    <?php include 'components/c_alert_banner.php'; ?>
-    <?php include 'components/c_home_banner.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_nav.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/services/s_db.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_alert_banner.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_home_banner.php'; ?>
+    <?php ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL); ?>
 
 </body>
 

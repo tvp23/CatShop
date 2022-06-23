@@ -22,8 +22,8 @@
 
 
     <?php session_start(); ?>
-    <?php include 'components/c_nav.php'; ?>
-    <?php include './services/s_db.php' ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_nav.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/services/s_db.php' ?>
     <div class="container" style="margin-top: 10em;">
         <div class="card">
             <div style="padding: 1em;">
