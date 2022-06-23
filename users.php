@@ -55,9 +55,9 @@
                         $users = selectUsers();
                         for ($i = 0; $i < count($users); $i++) { ?>
                             <tr>
-                                <th scope="row"><?php echo $i + 1 ?></th>
-                                <td colspan="3"><?php echo $users[$i]['email'] ?></td>
-                                <td><?php echo $users[$i]['name'] ?></td>
+                                <th scope="row"><?php echo htmlentities($i + 1) ?></th>
+                                <td colspan="3"><?php echo htmlentities($users[$i]['email']) ?></td>
+                                <td><?php echo htmlentities($users[$i]['name']) ?></td>
                                 <td>
                                     <?php if ($users[$i]['role'] == 'user') { ?>
                                         <span class="badge badge-primary">User</span>
@@ -72,9 +72,9 @@
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <!-- RoleButton -->
-                                        <button type="button" style="height: 24.5px;" class="btn btn-primary d-flex align-items-center" data-toggle="modal" data-target="#roleModal<?php echo $i ?>"><i class="bi bi-person-fill"></i></button>
+                                        <button type="button" style="height: 24.5px;" class="btn btn-primary d-flex align-items-center" data-toggle="modal" data-target="#roleModal<?php echo htmlentities($i) ?>"><i class="bi bi-person-fill"></i></button>
                                         <!-- RoleModal -->
-                                        <div class="modal fade" id="roleModal<?php echo $i ?>" tabindex="-1" aria-labelledby="RoleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="roleModal<?php echo htmlentities($i) ?>" tabindex="-1" aria-labelledby="RoleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -98,7 +98,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="submit" name="changeRole" value="<?php echo $users[$i]['id'] ?>" class="btn btn-primary">Save changes</button>
+                                                            <button type="submit" name="changeRole" value="<?php echo htmlentities($users[$i]['id']) ?>" class="btn btn-primary">Save changes</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -106,7 +106,7 @@
                                         </div>
 
                                         <!-- DeleteModal -->
-                                        <div class="modal fade" id="DeleteModal<?php echo $i ?>" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="DeleteModal<?php echo htmlentities($i) ?>" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -116,19 +116,19 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Are you sure you want to delete <span style="font-weight: bold;"><?php echo $users[$i]['email'] ?></span>?
+                                                        Are you sure you want to delete <span style="font-weight: bold;"><?php echo htmlentities($users[$i]['email']) ?></span>?
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                         <form method="post">
-                                                            <button type="submit" name="deleteAccount" value="<?php echo $users[$i]['id'] ?>" class="btn btn-danger">Delete Account</button>
+                                                            <button type="submit" name="deleteAccount" value="<?php echo htmlentities($users[$i]['id']) ?>" class="btn btn-danger">Delete Account</button>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- DeleteButton -->
-                                        <button type="button" style="height: 24.5px;" class="btn btn-danger d-flex align-items-center" data-toggle="modal" data-target="#DeleteModal<?php echo $i ?>"><i class="bi bi-x"></i></button>
+                                        <button type="button" style="height: 24.5px;" class="btn btn-danger d-flex align-items-center" data-toggle="modal" data-target="#DeleteModal<?php echo htmlentities($i) ?>"><i class="bi bi-x"></i></button>
                                     </div>
                                 </td>
                             </tr>

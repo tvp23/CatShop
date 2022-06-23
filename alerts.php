@@ -135,10 +135,10 @@
                     if (!empty($alerts)) {
                         for ($i = 0; $i < count($alerts); $i++) { ?>
                             <tr>
-                                <th scope="row"><?php echo $alerts[$i]['id'] ?></th>
-                                <td><?php echo $alerts[$i]['message'] ?></td>
+                                <th scope="row"><?php echo htmlentities($alerts[$i]['id']) ?></th>
+                                <td><?php echo htmlentities($alerts[$i]['message']) ?></td>
                                 <td>
-                                    <div style="margin-top: 0.6em;" class="d-flex justify-content-center align-self-center"><span class="badge badge-<?php echo $alerts[$i]['color'] ?>">&#32</span></div>
+                                    <div style="margin-top: 0.6em;" class="d-flex justify-content-center align-self-center"><span class="badge badge-<?php echo htmlentities($alerts[$i]['color']) ?>">&#32</span></div>
                                 </td>
                                 <td>
                                     <?php
@@ -152,11 +152,11 @@
                                 <td>
                                     <div class="btn-group btn-group-toggle">
                                         <!-- ActivateButton -->
-                                        <button class="btn btn-primary d-flex align-items-center" style="height: 24.5px;" type="button" data-toggle="modal" data-target="#Activate<?php echo $alerts[$i]['id'] ?>">
+                                        <button class="btn btn-primary d-flex align-items-center" style="height: 24.5px;" type="button" data-toggle="modal" data-target="#Activate<?php echo htmlentities($alerts[$i]['id']) ?>">
                                             <i class="bi bi-check"></i>
                                         </button>
                                         <!-- ActivateModal -->
-                                        <div class="modal fade" id="Activate<?php echo $alerts[$i]['id'] ?>" tabindex="-1" aria-labelledby="ActivateAlertLabel" aria-hidden="true">
+                                        <div class="modal fade" id="Activate<?php echo htmlentities($alerts[$i]['id']) ?>" tabindex="-1" aria-labelledby="ActivateAlertLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -171,7 +171,7 @@
                                                     <div class="modal-footer">
                                                         <form method="post">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="submit" name="activateAlert" value="<?php echo $alerts[$i]['id'] ?>" class="btn btn-primary">Activate Alert</button>
+                                                            <button type="submit" name="activateAlert" value="<?php echo htmlentities($alerts[$i]['id']) ?>" class="btn btn-primary">Activate Alert</button>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -179,11 +179,11 @@
                                         </div>
 
                                         <!-- EditButton -->
-                                        <button class="btn btn-warning d-flex align-items-center" style="height: 24.5px;" type="button" data-toggle="modal" data-target="#edit<?php echo $alerts[$i]['id'] ?>">
+                                        <button class="btn btn-warning d-flex align-items-center" style="height: 24.5px;" type="button" data-toggle="modal" data-target="#edit<?php echo htmlentities($alerts[$i]['id']) ?>">
                                             <i class="bi bi-dash" style="color: black;"></i>
                                         </button>
                                         <!-- EditeModal -->
-                                        <div class="modal fade" id="edit<?php echo $alerts[$i]['id'] ?>" tabindex="-1" aria-labelledby="EditAlertLabel" aria-hidden="true">
+                                        <div class="modal fade" id="edit<?php echo htmlentities($alerts[$i]['id']) ?>" tabindex="-1" aria-labelledby="EditAlertLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -198,7 +198,7 @@
                                                                 <!-- Message -->
                                                                 <div class="col-md-12">
                                                                     <label for="exampleInputEmail1">Message</label>
-                                                                    <input type="text" value="<?php echo $alerts[$i]['message'] ?>" name="updatemessage" class="form-control">
+                                                                    <input type="text" value="<?php echo htmlentities($alerts[$i]['message']) ?>" name="updatemessage" class="form-control">
                                                                 </div>
 
                                                                 <!-- ColorSelect -->
@@ -217,7 +217,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="submit" name="editAlert" value="<?php echo $alerts[$i]['id'] ?>" class="btn btn-warning">Update alert</button>
+                                                            <button type="submit" name="editAlert" value="<?php echo htmlentities($alerts[$i]['id']) ?>" class="btn btn-warning">Update alert</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -226,7 +226,7 @@
 
 
                                         <!-- DeleteModal -->
-                                        <div class="modal fade" id="Delete<?php echo $alerts[$i]['id'] ?>" tabindex="-1" aria-labelledby="ActivateAlertLabel" aria-hidden="true">
+                                        <div class="modal fade" id="Delete<?php echo htmlentities($alerts[$i]['id']) ?>" tabindex="-1" aria-labelledby="ActivateAlertLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -241,14 +241,14 @@
                                                     <div class="modal-footer">
                                                         <form method="post">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="submit" name="deleteAlert" value="<?php echo $alerts[$i]['id'] ?>" class="btn btn-danger">Delete Alert</button>
+                                                            <button type="submit" name="deleteAlert" value="<?php echo htmlentities($alerts[$i]['id']) ?>" class="btn btn-danger">Delete Alert</button>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- DeleteButton -->
-                                        <button class="btn btn-danger d-flex align-items-center" style="height: 24.5px;" type="button" data-toggle="modal" data-target="#Delete<?php echo $alerts[$i]['id'] ?>">
+                                        <button class="btn btn-danger d-flex align-items-center" style="height: 24.5px;" type="button" data-toggle="modal" data-target="#Delete<?php echo htmlentities($alerts[$i]['id']) ?>">
                                             <i class=" bi bi-x"></i>
                                         </button>
                                     </div>

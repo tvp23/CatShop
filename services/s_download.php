@@ -23,6 +23,6 @@ if (isset($_GET['path'])) {
         //Terminate from the script
         die();
     } else {
-        echo "File does not exist.";
+        echo htmlentities("File does not exist.");
     }
 }

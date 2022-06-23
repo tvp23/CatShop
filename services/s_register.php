@@ -47,7 +47,7 @@ function passwordValidation($password)
     return $ok;
 }
 
-$sanName = removeSpecialChar($name);
+$sanName = substr(removeSpecialChar($name), 0, 32);
 $error = [];
 if (!empty(selectUserWhereEmail($email)))
     array_push($error, 0);
@@ -63,7 +63,7 @@ if (count($error) == 0) {
 
     insertUser($sanName, $email, $hash, 'user');
 
-    $_SESSION["name"] = $name;
+    $_SESSION["name"] = $sanName;
     $_SESSION["role"] = 'user';
     header("Location: ../index.php");
 } else {

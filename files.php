@@ -31,13 +31,13 @@
         if (!unlink('files/' . $_POST['deleteFile'])) {
     ?>
             <div class="alert alert-danger" role="alert">
-                <?php echo ($_POST['deleteFile'] . " cannot be deleted due to an error") ?>
+                <?php echo htmlentities($_POST['deleteFile'] . " cannot be deleted due to an error") ?>
             </div>
         <?php
         } else {
         ?>
             <div class="alert alert-success" role="alert">
-                <?php echo ($_POST['deleteFile'] . " has been deleted") ?>
+                <?php echo htmlentities($_POST['deleteFile'] . " has been deleted") ?>
             </div>
     <?php
         }
@@ -89,12 +89,12 @@
 
                         for ($i = 2; $i < count($files); $i++) { ?>
                             <tr>
-                                <th scope="row"><?php echo $i - 1 ?></th>
-                                <td><?php echo $files[$i] ?></td>
+                                <th scope="row"><?php echo htmlentities($i - 1) ?></th>
+                                <td><?php echo htmlentities($files[$i]) ?></td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example" style="padding-bottom: 0.5em;">
                                         <!-- DownloadButton -->
-                                        <button style="height: 24.5px;" class="btn btn-primary d-flex align-items-center" type="button"><a class="download" href="services/s_download.php?path=<?php echo $files[$i] ?>"><i class="bi bi-download"></i></a></button>
+                                        <button style="height: 24.5px;" class="btn btn-primary d-flex align-items-center" type="button"><a class="download" href="services/s_download.php?path=<?php echo htmlentities($files[$i]) ?>"><i class="bi bi-download"></i></a></button>
                                         <?php if ($_SESSION['role'] != 'admin') { ?>
                                             <!-- DeleteModal -->
                                             <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="ActivateAlertLabel" aria-hidden="true">
@@ -112,7 +112,7 @@
                                                         <div class="modal-footer">
                                                             <form method="post">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <button type="submit" value="<?php echo $files[$i] ?>" name="deleteFile" class="btn btn-danger">Delete File</button>
+                                                                <button type="submit" value="<?php echo htmlentities($files[$i]) ?>" name="deleteFile" class="btn btn-danger">Delete File</button>
                                                             </form>
                                                         </div>
                                                     </div>

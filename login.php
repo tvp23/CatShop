@@ -24,7 +24,7 @@
     ?>
         <div class="alert alert-danger" role="alert">
             <span style="font-weight: bold;">Warning:</span>
-            <?php echo $_SESSION['error'] ?>
+            <?php echo htmlentities($_SESSION['error']) ?>
         </div>
     <?php
         unset($_SESSION['error']);

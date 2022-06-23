@@ -24,7 +24,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/c_alert_banner.php'; ?>
     <div class="container d-flex justify-content-center flex-column" style="margin-top: 5em; width: 62em;">
         <div class="d-flex justify-content-center" style="margin-bottom: 2em;">
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
                 <div class="input-group mb-3" style="width: 40em;">
                     <input type="text" class="form-control" placeholder="Search product" aria-describedby="button-addon2" name="product">
                     <div class="input-group-append">
@@ -46,11 +46,11 @@
             if (!empty($products)) {
                 for ($i = 0; $i < count($products); $i++) { ?>
                     <div class="card" style="width: 18rem; margin: 1em;">
-                        <img src="./assest/img/products/<?php echo $products[$i]['image'] ?>" class="card-img-top" alt="<?php echo $products[$i]['name'] ?>">
+                        <img src="./assest/img/products/<?php echo htmlentities($products[$i]['image']) ?>" class="card-img-top" alt="<?php echo htmlentities($products[$i]['name']) ?>">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $products[$i]['name'] ?></h5>
-                            <p>$<?php echo $products[$i]['price'] ?></p>
-                            <p class="card-text"><?php echo $products[$i]['description'] ?></p>
+                            <h5 class="card-title"><?php echo htmlentities($products[$i]['name']) ?></h5>
+                            <p>$<?php echo htmlentities($products[$i]['price']) ?></p>
+                            <p class="card-text"><?php echo htmlentities($products[$i]['description']) ?></p>
                         </div>
                     </div>
             <?php }
