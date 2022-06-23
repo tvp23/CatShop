@@ -95,9 +95,9 @@ function selectProductsWhereName($name)
 {
     $conn = connect();
 
-    $sql = "SELECT * FROM catshop_products WHERE name LIKE :name";
+    $sql = "SELECT * FROM catshop_products WHERE INSTR(name , :name) > 0";
     $params = array(
-        ":name" => $name . '%'
+        ":name" => $name
     );
 
     $stmt = $conn->prepare($sql);

@@ -11,6 +11,7 @@
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+        <small id="emailHelp" class="form-text text-muted">Password must contain [a-z, A-Z, 0-9] and a special char.</small>
     </div>
     <button type="submit" class="btn btn-primary">Register</button>
 </form>
