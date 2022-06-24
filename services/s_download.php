@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['path'])) {
     //Read the filename
-    $filename = $_SERVER['DOCUMENT_ROOT'] . '/files/' . $_GET['path'];
+    $filename = $_SERVER['DOCUMENT_ROOT'] . '/files/' . basename($_GET['path']);
     //Check the file exists or not
     if (file_exists($filename)) {
 
