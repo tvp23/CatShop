@@ -26,7 +26,7 @@ create table catshop_users
 (
     id       int auto_increment
         primary key,
-    name     char(16) not null,
+    name     char(32) not null,
     email    char(25) not null,
     password char(75) not null,
     role     char(10) not null,
