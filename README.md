@@ -1,2 +1,4 @@
 # CatShop
-[Funtional Design](https://www.example.com)
+***
+### [Functional design](./Functional_Design.md)
+Images of Catshop
