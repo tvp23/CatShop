@@ -7,39 +7,40 @@
 | **Student ID** | 157802 |
 
 # **Index**
-### [**Functionalities**](##unctionalities)
-##### [**Home-page**](#Functionalities)
-##### [**Product-page**](#Functionalities)
-##### [**File-page**](#Functionalities)
-##### [**Alert-page**](#Functionalities)
-##### [**Admin-page**](#Functionalities)
-#### [**Components**](#Functionalities)
-##### [**Nav bar**](#Functionalities)
-##### [**Alerts**](#Functionalities)
+## [**Functionalities**](#Functionalities)
+##### [**Home-page**](#Home-page)
+##### [**Product-page**](#Product-page)
+##### [**File-page**](#File-page)
+##### [**Alert-page**](#Alert-page)
+##### [**Admin-page**](#Admin-page)
+### [**Components**](#Components)
+##### [**Nav bar**](#Nav-bar)
+##### [**Alerts**](#Alerts)
+### [**Functions**](#Functions)
+##### [**Roles**](#Roles)
+##### [**Account info**](#Account-info)
 ---
-### [**Functions**](#Functionalities)
-##### [**Roles**](#Functionalities)
-##### [**Account info**](#Functionalities)
+## [**Datamodel**](#Datamodel)
+##### [**E.R.D**](#E.R.D)
+##### [**Data dictionary**](#Data-dictionary)
 ---
-### [**Datamodel**](#Functionalities)
-##### [**E.R.D**](#Functionalities)
-##### [**Data dictionary**](#Functionalities)
----
-### [**Production environment**](#Functionalities)
-##### [**Server Programs**](#Functionalities)
-##### [**Open ports**](#Functionalities)
-##### [**Server installation steps**](#Functionalities)
+## [**Production environment**](#Production-environment)
+##### [**Server Programs**](#Server-Programs)
+##### [**Open ports**](#Open-ports)
+##### [**Server installation steps**](#Server-installation-steps)
 
 
 <br>
 
 ---
-## **Functionalities**
+## Functionalities
 ### **Home-page**
 **Requirements**
 The following is required:
 - Serve as a landing page.
 - have a welcome message. 
+
+<br>
 
 ---
 
