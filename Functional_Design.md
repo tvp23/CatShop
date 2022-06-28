@@ -1,5 +1,4 @@
-# Functional design Catshop
-***
+# **Functional design Catshop**
 | Info | |  
 | ----------- | ----------- |
 | **Version** | 1.0 |  
@@ -7,17 +6,47 @@
 | **Name** | Twan van Paridon |
 | **Student ID** | 157802 |
 
-## Functionalities
-### Pages
-##### Home-page
+# **Index**
+### [**Functionalities**](##unctionalities)
+##### [**Home-page**](#Functionalities)
+##### [**Product-page**](#Functionalities)
+##### [**File-page**](#Functionalities)
+##### [**Alert-page**](#Functionalities)
+##### [**Admin-page**](#Functionalities)
+#### [**Components**](#Functionalities)
+##### [**Nav bar**](#Functionalities)
+##### [**Alerts**](#Functionalities)
+---
+### [**Functions**](#Functionalities)
+##### [**Roles**](#Functionalities)
+##### [**Account info**](#Functionalities)
+---
+### [**Datamodel**](#Functionalities)
+##### [**E.R.D**](#Functionalities)
+##### [**Data dictionary**](#Functionalities)
+---
+### [**Production environment**](#Functionalities)
+##### [**Server Programs**](#Functionalities)
+##### [**Open ports**](#Functionalities)
+##### [**Server installation steps**](#Functionalities)
+
+
+<br>
+
+---
+## **Functionalities**
+### **Home-page**
 **Requirements**
 The following is required:
 - Serve as a landing page.
 - have a welcome message. 
 
-##### Product-page
+---
+
+### **Product-page**
 **Requirements**
 The following is required:
+
 - The product page should serve products to the user.
 - The product page should have a search function
 
@@ -27,9 +56,12 @@ For this can be use a bootstrap card. Above the grid there should be a search ba
 
 **Security**
 The Search function should be sql-injection safe, This can be done by using PDO protocol. The text displaying your search query be safe from XSS by only printing text instead of a executing code. This can be done with the following code:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `echo htmlentities($str);`
+`echo htmlentities($str);`
 
-##### File-page
+<br>
+
+---
+### **File-page**
 **Requirements**
 The following is required:
 - Display files in table
@@ -42,6 +74,9 @@ The files should be dispayed in a bootstrap table and should have the following 
 | id | Name | Tools | 
 | ----------- | ----------- | ----------- | 
 | 1 | example.jpg |Download, Delete ***(Icons)***|
+
+<br>
+
 There should also be a action above the table to add files.
 
 When deleting a file there should be a bootstrap modal confirming your action. After deleting the file there should be a alert showing the satus of deleting the file.
@@ -58,7 +93,10 @@ When uploading a file it should be checked for file size and extention. this nee
 
 When *downloading/deleting* a file it should be containt to the 'File' directory. The user should not be able to *download/deleting* files out side of the given directory. This can be done by using the following function `basename($path);`.
 
-##### Alert-page
+<br>
+
+---
+### **Alert-page**
 **Requirements**
 The following is required:
 - The page should have a way to display all alerts.
@@ -74,6 +112,8 @@ The files should be dispayed in a bootstrap table and should have the following 
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 1 | example message | $color | Active | Activate, Update, Delete ***(Icons)***|
 
+<br>
+
 There should also be a action above the table to add alerts and disable all alerts.
 
 When activating, deactivating and deleting a alert there should be a bootstrap modal confirming your action.
@@ -83,9 +123,12 @@ When adding and updating a alert there should be a bootstrap modal containing th
 There can only be one alert active at a time.
 
 When displaying the alert you should be conscious of XSS vulnerabilities.
-!link to displaying alerts
+[See alerts](####alerts)
 
-##### Admin-page
+<br>
+
+---
+### **Admin-page**
 **Requirements**
 The following is required:
 - Display all users
@@ -99,14 +142,16 @@ The users should be dispayed in a bootstrap table and should have the following 
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 1 | Examle@email.com | Example Name | $role | Update, Delete ***(Icons)***|
 
+<br>
+
 When deleting a user there should be a bootstrap modal confirming your action.
 When updating a user there should be a bootstrap modal containing the form for the role.
 
 **Security**
 You should only partially retrieve the userdata, so no information will be leaked.
 
-##### Components
-**Nav bar**
+### **Components**
+#### **Nav bar**
 The nav-bar contains the following items:
 - Home
 - Products
@@ -122,13 +167,19 @@ If the user role does not check the needed permision, than the item should not b
 
 When displaying the username you should be conscious of XSS use the following code to prevent XSS `echo htmlentities($str);`.
 
-***
-**Alerts**
+<br>
+
+---
+#### **Alerts**
 The alerts should be displayed on the Home page and the Product page under the nav-bar.
 
 This should be a bootstrap alert with the given color an the message. The message should be XSS safe by using the following code `echo htmlentities($str);`.
-### Functions
-##### Roles
+
+<br>
+
+---
+### **Functions**
+#### **Roles**
 The role system is set in place so the user can't access all parts of the website.
 
 There are the following roles:
@@ -136,8 +187,8 @@ There are the following roles:
 - admin  
 - superadmin
 
-**Security**
-When a uesr does not have access to a page the user should be redirected to the home page. The contents of the pages should also not be loaded in for the user.
+**Security** <br>
+When a user does not have access to a page the user should be redirected to the home page. The contents of the pages should also not be loaded in for the user.
 
 The roles have access to the following pages:
 
@@ -155,9 +206,10 @@ The roles have access to the following pages:
 ❌  : No access
 ➖  : Partial access
 
+<br>
 
+#### **Account info**
 
-##### Account info
 It's important the accounts create are safe. Thats why a account be validated on creation.
 
 The user name is validated on the following properties:
@@ -166,7 +218,7 @@ The user name is validated on the following properties:
 	- `;`, `#`, `<`, `>`, `?`, `/`, `\`
 
 The user email should be validated as a real email.
-
+<br>
 The user password is validated on the following properties:
 - Must be longer than 8 chars
 - Must contain a special char
@@ -174,11 +226,19 @@ The user password is validated on the following properties:
 - Must contain a small letter
 - Must contain a number
 
-## Datamodel
-##### E.R.D
-![ERD](image.jpg)
-##### Data dictionary
-***
+When saving the password it should be encrypted with a one way hash like bcrypt. This way it much safer.
+
+<br>
+
+---
+## **Datamodel**
+### **E.R.D**
+![ERD](./assest/ERD.png)
+
+<br>
+
+---
+### **Data dictionary**
 **Catshop-Products**
 
 | Column | Datatype | Length | Key | Relation |  
@@ -212,9 +272,13 @@ The user password is validated on the following properties:
 | email | char | 25 | Secondary | - |
 | password | char | 75 |- | - |
 | role | char | 10 | - | - |
+
+<br>
+
+---
 ## Production environment
 
-**Server Programs**
+#### **Server Programs**
 
 | Program | Version |  
 | ----------- | ----------- |  
@@ -226,13 +290,14 @@ The user password is validated on the following properties:
 
 ***
 
-**Open ports**
+#### **Open ports**
 all ports are managed by UFW
 - Port 80 for apache2
 - Port 22 for Open SHH
 
 ***
-**Server installation steps**
+#### **Server installation steps**
+
 Installing apache2
 1.  `sudo apt install apache2`
 2. `sudo ufw allow 'Apache'`
