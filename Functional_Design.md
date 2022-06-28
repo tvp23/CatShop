@@ -7,7 +7,7 @@
 | **Student ID** | 157802 |
 
 # **Index**
-## [**Functionalities**](#Functionalities)
+## [**Functionalities**](#functionalities-1)
 ##### [**Home-page**](#home-page-1)
 ##### [**Product-page**](#product-page-1)
 ##### [**File-page**](#file-page-1)
